@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind UI Libraries</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/6868/6868985.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <div class="grid-lines"></div>
+    </div>
+    <div class="container">
+      <div class="badge-top">🎨 Developer Resource</div>
+      <h1 class="hero-title">
+        <span class="line1">Tailwind UI</span>
+        <span class="line2">Libraries</span>
+      </h1>
+      <p class="hero-sub">React ও Next.js প্রজেক্টে ব্যবহারযোগ্য <strong>42টি</strong> সেরা লাইব্রেরি — টায়ার র‍্যাংকিং সহ</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">42</span><span class="stat-label">লাইব্রেরি</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">6</span><span class="stat-label">S-Tier</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">9</span><span class="stat-label">নতুন</span></div>
+        <div class="stat-div"></div>
+        <div class="stat"><span class="stat-num">35+</span><span class="stat-label">সম্পূর্ণ ফ্রি</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- TIER LEGEND -->
+  <section class="tier-section">
+    <div class="container">
+      <h2 class="section-title">টায়ার র‍্যাংকিং কী?</h2>
+      <div class="tier-grid">
+        <div class="tier-card t-s">
+          <div class="tier-icon">🏆</div>
+          <div class="tier-name">S-Tier</div>
+          <div class="tier-meaning">সেরা</div>
+          <div class="tier-detail">প্রতিদিনের প্রজেক্টে ব্যবহারযোগ্য। সবচেয়ে জনপ্রিয়, সক্রিয়ভাবে আপডেট হয়, বিশাল community।</div>
+        </div>
+        <div class="tier-card t-a">
+          <div class="tier-icon">✅</div>
+          <div class="tier-name">A-Tier</div>
+          <div class="tier-meaning">খুব ভালো</div>
+          <div class="tier-detail">নির্দিষ্ট কাজে পারফেক্ট। ভালো মানের ও নির্ভরযোগ্য — তবে S-Tier-এর মতো ব্যাপক নয়।</div>
+        </div>
+        <div class="tier-card t-b">
+          <div class="tier-icon">👍</div>
+          <div class="tier-name">B-Tier</div>
+          <div class="tier-meaning">ভালো</div>
+          <div class="tier-detail">বিকল্প হিসেবে কাজে আসে। নির্দিষ্ট ব্যবহারক্ষেত্র আছে, তবে সীমাবদ্ধতাও আছে।</div>
+        </div>
+        <div class="tier-card t-c">
+          <div class="tier-icon">ℹ️</div>
+          <div class="tier-name">C-Tier</div>
+          <div class="tier-meaning">সীমিত</div>
+          <div class="tier-detail">পুরনো বা কম আপডেটেড। ছোট প্রজেক্টে বা শেখার জন্য ব্যবহার করা যায়।</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEARCH & FILTER -->
+  <section class="controls-section">
+    <div class="container">
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input type="text" id="search" placeholder="লাইব্রেরি খুঁজুন..." autocomplete="off" />
+        <span class="search-clear" id="clearBtn" onclick="clearSearch()">✕</span>
+      </div>
+      <div class="filter-wrap">
+        <button class="fbtn active" data-filter="all">সব <span class="fbtn-count">42</span></button>
+        <button class="fbtn" data-filter="S">🏆 S-Tier</button>
+        <button class="fbtn" data-filter="A">✅ A-Tier</button>
+        <button class="fbtn" data-filter="B">👍 B-Tier</button>
+        <button class="fbtn" data-filter="C">ℹ️ C-Tier</button>
+        <button class="fbtn" data-filter="free">সম্পূর্ণ ফ্রি</button>
+        <button class="fbtn" data-filter="new">🆕 নতুন</button>
+        <button class="fbtn" data-filter="anim">✨ Animation</button>
+      </div>
+      <div class="result-count" id="resultCount">42টি লাইব্রেরি দেখাচ্ছে</div>
+    </div>
+  </section>
+
+  <!-- LIBRARY GRID -->
+  <section class="libs-section">
+    <div class="container">
+      <div class="lib-grid" id="libGrid"></div>
+      <div class="no-result hidden" id="noResult">
+        <div class="no-result-icon">🔍</div>
+        <p>কোনো লাইব্রেরি পাওয়া যায়নি</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFLICT GUIDE -->
+  <section class="conflict-section">
+    <div class="container">
+      <h2 class="section-title">⚠️ Conflict গাইড</h2>
+      <p class="section-sub">কোন লাইব্রেরিগুলো একসাথে ব্যবহার করা যাবে বা যাবে না</p>
+      <div class="conflict-grid">
+        <div class="conflict-col safe">
+          <div class="conflict-head">✅ একসাথে নিরাপদ</div>
+          <div class="conflict-item">Shadcn UI + HyperUI</div>
+          <div class="conflict-item">Shadcn UI + Magic UI</div>
+          <div class="conflict-item">Shadcn UI + Aceternity UI</div>
+          <div class="conflict-item">Magic UI + Aceternity UI</div>
+          <div class="conflict-item">Shadcn UI + Headless UI</div>
+          <div class="conflict-item">Radix UI + Shadcn UI</div>
+          <div class="conflict-item">HyperUI + Float UI</div>
+        </div>
+        <div class="conflict-col danger">
+          <div class="conflict-head">❌ একসাথে ব্যবহার করবেন না</div>
+          <div class="conflict-item">Shadcn UI + DaisyUI</div>
+          <div class="conflict-item">DaisyUI + Ripple UI</div>
+          <div class="conflict-item">Material Tailwind + HeroUI</div>
+          <div class="conflict-item">Flowbite + Preline (theme conflict)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECOMMENDATION -->
+  <section class="rec-section">
+    <div class="container">
+      <h2 class="section-title">🏆 সর্বোচ্চ সুপারিশ</h2>
+      <p class="section-sub">একটি প্রজেক্টের জন্য আদর্শ combination</p>
+      <div class="rec-grid">
+        <div class="rec-item">
+          <div class="rec-role">Base UI</div>
+          <div class="rec-lib">Shadcn UI</div>
+        </div>
+        <div class="rec-arrow">→</div>
+        <div class="rec-item">
+          <div class="rec-role">Animation</div>
+          <div class="rec-lib">Aceternity UI / Magic UI</div>
+        </div>
+        <div class="rec-arrow">→</div>
+        <div class="rec-item">
+          <div class="rec-role">Sections</div>
+          <div class="rec-lib">HyperUI / Float UI</div>
+        </div>
+        <div class="rec-arrow">→</div>
+        <div class="rec-item">
+          <div class="rec-role">Chat UI</div>
+          <div class="rec-lib">LangUI</div>
+        </div>
+        <div class="rec-arrow">→</div>
+        <div class="rec-item">
+          <div class="rec-role">Icons</div>
+          <div class="rec-lib">Myna UI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>সর্বশেষ আপডেট: এপ্রিল ২০২৬ &nbsp;·&nbsp; 42টি লাইব্রেরি</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
