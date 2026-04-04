@@ -11,7 +11,7 @@
 
 ## 🌐 Live Demo
 
-**[→ ওয়েবসাইট দেখুন](https://tailwind-ui-libraries.netlify.app/)**
+**[→ ওয়েবসাইট দেখুন](https://tailwind-ui-libraries.netlify.app)**
 
 ---
 
