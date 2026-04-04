@@ -34,6 +34,7 @@ tailwind-libs/
 ├── index.html      # Main HTML structure
 ├── style.css       # All styles & dark theme
 ├── script.js       # Library data & filter logic
+├── data.json       # Library data
 └── README.md       # Documentation
 ```
 
