@@ -1,6 +1,6 @@
 # 🎨 Tailwind UI Libraries — সম্পূর্ণ গাইড
 
-> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **42টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, conflict গাইড ও সুপারিশ সহ।
+> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **43টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, conflict গাইড ও সুপারিশ সহ।
 
 ![Preview](https://img.shields.io/badge/Libraries-42-6366f1?style=for-the-badge)
 ![Tier](https://img.shields.io/badge/S--Tier-6-a78bfa?style=for-the-badge)

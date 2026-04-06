@@ -544,5 +544,18 @@
     "desc": "Animated section, hero, text effects — অন্য কোথাও পাওয়া যায় না এমন unique design।",
     "isNew": false,
     "anim": true
+  },
+  {
+    "id": 43,
+    "name": "ZenUI",
+    "tier": "A",
+    "free": true,
+    "react": true,
+    "next": true,
+    "link": "zenui.net",
+    "install": "Copy-paste",
+    "desc": "No dependency — component, icon, template, color palette সব একসাথে। বাংলাদেশি developer-দের তৈরি।",
+    "isNew": true,
+    "anim": false
   }
 ]
