@@ -2,10 +2,10 @@
 
 > React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **43টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, conflict গাইড ও সুপারিশ সহ।
 
-![Preview](https://img.shields.io/badge/Libraries-42-6366f1?style=for-the-badge)
+![Preview](https://img.shields.io/badge/Libraries-43-6366f1?style=for-the-badge)
 ![Tier](https://img.shields.io/badge/S--Tier-6-a78bfa?style=for-the-badge)
 ![Free](https://img.shields.io/badge/Free-35%2B-34d399?style=for-the-badge)
-![New](https://img.shields.io/badge/New-9-fbbf24?style=for-the-badge)
+![New](https://img.shields.io/badge/New-10-fbbf24?style=for-the-badge)
 
 ---
 
