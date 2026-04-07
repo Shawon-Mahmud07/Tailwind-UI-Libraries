@@ -8,6 +8,9 @@ let libs = [];
 
 // ── Card HTML তৈরি ──────────────────────────────────────────
 function buildCard(lib) {
+  const installText = lib.install || "Copy-paste";
+  const isNpmInstall = installText.toLowerCase().includes("npm");
+
   return `
     <div class="lib-card tier-${lib.tier}">
       <div class="card-header">
@@ -18,13 +21,28 @@ function buildCard(lib) {
         </div>
         <span class="tier-badge tb-${lib.tier}">${tierLabel[lib.tier]}</span>
       </div>
+      
       <div class="card-desc">${lib.desc}</div>
+      
       <div class="card-footer">
         <span class="tag ${lib.free ? "tag-free" : "tag-paid"}">${lib.free ? "✓ ফ্রি" : "⚡ ফ্রি+Paid"}</span>
         ${lib.react ? '<span class="tag tag-react">⚛ React</span>' : ""}
         ${lib.next ? '<span class="tag tag-next">▲ Next.js</span>' : ""}
-        ${lib.install && lib.install !== "Copy-paste" ? `<span class="tag tag-install">${lib.install}</span>` : ""}
-        <a class="card-link" href="https://${lib.link}" target="_blank" rel="noopener">${lib.link} ↗</a>
+
+        <!-- Install Button -->
+        ${isNpmInstall ? `
+          <button class="copy-install-btn" data-install="${installText}">
+            📋 ${installText}
+          </button>
+        ` : `
+          <span class="copy-install-disabled">
+            📋 Copy-paste
+          </span>
+        `}
+
+        <a class="card-link" href="https://${lib.link}" target="_blank" rel="noopener">
+          ${lib.link} ↗
+        </a>
       </div>
     </div>
   `;
@@ -106,6 +124,26 @@ async function loadData() {
     console.error("Fetch error:", err);
   }
 }
+
+// ── Copy Install Command ─────────────────────────────────────
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('copy-install-btn')) {
+    const btn = e.target;
+    const textToCopy = btn.getAttribute('data-install');
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      const originalHTML = btn.innerHTML;
+      
+      btn.classList.add('copied');
+      btn.innerHTML = `✅ Copied!`;
+
+      setTimeout(() => {
+        btn.classList.remove('copied');
+        btn.innerHTML = originalHTML;
+      }, 2000);
+    });
+  }
+});
 
 // ── Filter Buttons ───────────────────────────────────────────
 document.querySelectorAll(".fbtn").forEach(function(btn) {
