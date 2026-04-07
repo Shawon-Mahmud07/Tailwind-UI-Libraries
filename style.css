@@ -323,9 +323,36 @@ body {
   position: relative;
   overflow: hidden;
   transform: translateY(0);
+  opacity: 0;                    /* শুরুতে লুকানো থাকবে */
 
-  /* Slower & Smoother Card Pop Animation */
-  animation: cardPop 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) backwards;
+  /* Staggered Card Pop Animation */
+  animation: cardPop 0.85s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Staggered Delay for each card */
+.lib-grid .lib-card:nth-child(1)  { animation-delay: 0ms; }
+.lib-grid .lib-card:nth-child(2)  { animation-delay: 60ms; }
+.lib-grid .lib-card:nth-child(3)  { animation-delay: 120ms; }
+.lib-grid .lib-card:nth-child(4)  { animation-delay: 180ms; }
+.lib-grid .lib-card:nth-child(5)  { animation-delay: 240ms; }
+.lib-grid .lib-card:nth-child(6)  { animation-delay: 300ms; }
+.lib-grid .lib-card:nth-child(7)  { animation-delay: 360ms; }
+.lib-grid .lib-card:nth-child(8)  { animation-delay: 420ms; }
+.lib-grid .lib-card:nth-child(9)  { animation-delay: 480ms; }
+.lib-grid .lib-card:nth-child(10) { animation-delay: 540ms; }
+.lib-grid .lib-card:nth-child(11) { animation-delay: 600ms; }
+.lib-grid .lib-card:nth-child(12) { animation-delay: 660ms; }
+
+/* Card Pop Animation Keyframes */
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Tier Top Glow Line */
@@ -382,18 +409,6 @@ body {
 .lib-card:hover::after {
   opacity: 1;
   transform: translateX(250%) skewX(-25deg);
-}
-
-/* Improved Card Pop Animation */
-@keyframes cardPop {
-  from {
-    opacity: 0;
-    transform: translateY(50px) scale(0.88);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 
 .card-header {

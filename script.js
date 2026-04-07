@@ -117,20 +117,38 @@ document.querySelectorAll(".fbtn").forEach(function(btn) {
   });
 });
 
-// ── Search ───────────────────────────────────────────────────
+// ── Search with Debounce ─────────────────────────────────────
 var searchInput = document.getElementById("search");
 var clearBtn = document.getElementById("clearBtn");
+let searchTimeout = null;
 
 searchInput.addEventListener("input", function() {
-  clearBtn.classList.toggle("visible", searchInput.value.length > 0);
-  render(getFiltered());
+  const query = this.value.trim();
+
+  // Clear previous timeout
+  if (searchTimeout) {
+    clearTimeout(searchTimeout);
+  }
+
+  // Show/Hide clear button
+  clearBtn.classList.toggle("visible", query.length > 0);
+
+  // Debounce: Wait 300ms before rendering
+  searchTimeout = setTimeout(() => {
+    render(getFiltered());
+  }, 300);
 });
 
 function clearSearch() {
   searchInput.value = "";
   clearBtn.classList.remove("visible");
+  
+  // Clear any pending timeout
+  if (searchTimeout) {
+    clearTimeout(searchTimeout);
+  }
+  
   render(getFiltered());
 }
-
 // ── Start ────────────────────────────────────────────────────
 loadData();
