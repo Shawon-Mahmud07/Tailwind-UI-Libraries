@@ -188,5 +188,28 @@ function clearSearch() {
   
   render(getFiltered());
 }
+// ── Theme Switcher ───────────────────────────────────────────
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  
+  // Active class update
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.theme === theme);
+  });
+}
+
+// Load saved theme or default
+const savedTheme = localStorage.getItem('theme') || 'dark';
+setTheme(savedTheme);
+
+// Add click listeners
+document.querySelectorAll('.theme-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    setTheme(btn.dataset.theme);
+  });
+});
+
+
 // ── Start ────────────────────────────────────────────────────
 loadData();
