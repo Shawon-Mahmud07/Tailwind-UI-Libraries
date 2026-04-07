@@ -9,7 +9,9 @@ let libs = [];
 // ── Card HTML তৈরি ──────────────────────────────────────────
 function buildCard(lib) {
   const installText = lib.install || "Copy-paste";
-  const isNpmInstall = installText.toLowerCase().includes("npm");
+  const isNpmInstall =
+    installText.toLowerCase().includes("npm") ||
+    installText.toLowerCase().includes("npx");
 
   return `
     <div class="lib-card tier-${lib.tier}">
