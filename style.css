@@ -311,7 +311,7 @@ body {
 .lib-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;                    /* একটু বাড়ানো হয়েছে */
+  gap: 16px;                    
 }
 
 /* ===== LIB CARD ===== */
@@ -319,12 +319,13 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 20px 22px;           /* একটু বেশি padding */
+  padding: 20px 22px;
   position: relative;
   overflow: hidden;
-  animation: fadeUp 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateY(0);
+
+  /* Slower & Smoother Card Pop Animation */
+  animation: cardPop 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) backwards;
 }
 
 /* Tier Top Glow Line */
@@ -340,7 +341,7 @@ body {
   opacity: 0.75;
 }
 
-/* Tier-based accent line (hover এ ওভাররাইড হবে) */
+/* Tier-based accent line */
 .lib-card.tier-S::before { background: linear-gradient(90deg, var(--s-color), transparent); }
 .lib-card.tier-A::before { background: linear-gradient(90deg, var(--a-color), transparent); }
 .lib-card.tier-B::before { background: linear-gradient(90deg, var(--b-color), transparent); }
@@ -361,7 +362,7 @@ body {
   background: linear-gradient(90deg, var(--accent), var(--accent2), #06b6d4);
 }
 
-/* Subtle shine / light sweep effect */
+/* Subtle shine effect */
 .lib-card::after {
   content: '';
   position: absolute;
@@ -383,9 +384,16 @@ body {
   transform: translateX(250%) skewX(-25deg);
 }
 
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Improved Card Pop Animation */
+@keyframes cardPop {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .card-header {
