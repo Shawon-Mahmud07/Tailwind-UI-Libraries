@@ -1,41 +1,49 @@
 # 🎨 Tailwind UI Libraries — সম্পূর্ণ গাইড
 
-> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **43টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, conflict গাইড ও সুপারিশ সহ।
+> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **৪৩টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, কনফ্লিক্ট গাইড এবং আধুনিক থিম সাপোর্ট সহ।
 
-![Preview](https://img.shields.io/badge/Libraries-43-6366f1?style=for-the-badge)
+![Libraries](https://img.shields.io/badge/Libraries-43-6366f1?style=for-the-badge)
 ![Tier](https://img.shields.io/badge/S--Tier-6-a78bfa?style=for-the-badge)
 ![Free](https://img.shields.io/badge/Free-35%2B-34d399?style=for-the-badge)
-![New](https://img.shields.io/badge/New-10-fbbf24?style=for-the-badge)
+![Themes](https://img.shields.io/badge/Themes-4-ff69b4?style=for-the-badge)
 
 ---
 
 ## 🌐 Live Demo
 
-**[→ ওয়েবসাইট দেখুন](https://tailwind-ui-libraries.netlify.app)**
+**[→ ওয়েবসাইট দেখুন](https://tailwind-ui-libraries.netlify.app)**
 
 ---
 
-## ✨ Features
+## ✨ নতুন ফিচারসমূহ (Updated)
 
-- 🔍 **Real-time search** — নাম বা বিবরণ দিয়ে খুঁজুন
-- 🏷️ **Tier filter** — S / A / B / C টায়ার অনুযায়ী ফিল্টার
-- 🆕 **New filter** — সম্প্রতি যোগ হওয়া লাইব্রেরি
-- ✨ **Animation filter** — শুধু animation লাইব্রেরি
-- ⚠️ **Conflict গাইড** — কোনগুলো একসাথে ব্যবহার করা যাবে না
-- 📱 **Responsive** — মোবাইল ও ডেস্কটপ উভয়ে কাজ করে
-- 🌙 **Dark theme** — চোখের আরামদায়ক dark UI
+- 🔍 **Real-time Search with Debounce** — নাম বা বিবরণ দিয়ে দ্রুত লাইব্রেরি খুঁজে বের করুন।
+- 🎨 **Multiple Themes** — আপনার পছন্দমতো **Dark, Indigo, Purple, বা Teal** থিম বেছে নিন।
+- 🏷️ **Advanced Filtering** — টায়ার (S/A/B/C), New লাইব্রেরি এবং শুধুমাত্র Animation লাইব্রেরি ফিল্টার করার সুবিধা।
+- 🪄 **Glassmorphism UI** — আধুনিক গ্রেডিয়েন্ট এবং গ্লাস ইফেক্ট সহ প্রিমিয়াম লুক।
+- ⚠️ **Conflict Guide** — কোন কোন লাইব্রেরিগুলো একসাথে ব্যবহার করলে কনফ্লিক্ট হতে পারে তার গাইডলাইন।
+- 🏆 **Expert Recommendation** — প্রজেক্টের ধরন অনুযায়ী কোন কম্বিনেশন সেরা তার সাজেশন।
 
 ---
 
-## 📁 Project Structure
+## 🛠️ টেকনিক্যাল স্ট্যাক (Built With)
+
+- **HTML5 & CSS3** (Custom Properties, Radial Gradients)
+- **Vanilla JavaScript** (ES6+, Filter Logic, LocalStorage)
+- **Google Fonts** (Sora & JetBrains Mono)
+- **JSON Based Data Management**
+
+---
+
+## 📁 প্রজেক্ট স্ট্রাকচার
 
 ```plaintext
 tailwind-libs/
-├── index.html      # Main HTML structure
-├── style.css       # All styles & dark theme
-├── script.js       # Library data & filter logic
-├── data.json       # Library data
-└── README.md       # Documentation
+├── index.html      # মূল UI স্ট্রাকচার ও নেভিগেশন
+├── style.css       # কাস্টম থিম সিস্টেম ও এনিমেশন স্টাইল
+├── script.js       # ফিল্টার লজিক, সার্চ এবং থিম সুইচার
+├── data.json       # লাইব্রেরির তালিকা ও বিবরণ (Data Source)
+└── README.md       # প্রজেক্ট ডকুমেন্টেশন
 ```
 
 ---
