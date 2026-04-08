@@ -96,21 +96,30 @@ function getFiltered() {
   });
 }
 
-// ── Loading / Error UI ───────────────────────────────────────
+// ── Loading Skeleton ───────────────────────────────────────
 function showLoading() {
-  document.getElementById("libGrid").innerHTML = `
-    <div style="grid-column:1/-1; text-align:center; padding:60px 0; color:#555f6e;">
-      <div style="font-size:28px; margin-bottom:12px;">⏳</div>
-      <p style="font-size:14px;">লাইব্রেরি লোড হচ্ছে...</p>
-    </div>`;
-}
+  const grid = document.getElementById("libGrid");
+  let skeletonHTML = '<div class="skeleton-grid">';
 
-function showError(msg) {
-  document.getElementById("libGrid").innerHTML = `
-    <div style="grid-column:1/-1; text-align:center; padding:60px 0; color:#f87171;">
-      <div style="font-size:28px; margin-bottom:12px;">❌</div>
-      <p style="font-size:14px;">${msg}</p>
-    </div>`;
+  for (let i = 0; i < 8; i++) {
+    skeletonHTML += `
+      <div class="skeleton-card">
+        <div class="skeleton-header">
+          <div class="skeleton-title"></div>
+          <div class="skeleton-badge"></div>
+        </div>
+        <div class="skeleton-desc"></div>
+        <div class="skeleton-desc"></div>
+        <div class="skeleton-footer">
+          <div class="skeleton-tag"></div>
+          <div class="skeleton-tag"></div>
+        </div>
+      </div>
+    `;
+  }
+
+  skeletonHTML += '</div>';
+  grid.innerHTML = skeletonHTML;
 }
 
 // ── JSON Fetch ───────────────────────────────────────────────

@@ -725,6 +725,74 @@ body {
 }
 .footer p { font-size: 12px; color: var(--text3); }
 
+/* ===== SKELETON LOADING ===== */
+.skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.skeleton-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  height: 178px;
+  animation: skeletonPulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.skeleton-title {
+  height: 18px;
+  width: 65%;
+  background: var(--surface2);
+  border-radius: 6px;
+}
+
+.skeleton-badge {
+  height: 22px;
+  width: 70px;
+  background: var(--surface2);
+  border-radius: 20px;
+}
+
+.skeleton-desc {
+  height: 14px;
+  width: 100%;
+  background: var(--surface2);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-desc:last-child {
+  width: 75%;
+  margin-bottom: 0;
+}
+
+.skeleton-footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.skeleton-tag {
+  height: 24px;
+  width: 65px;
+  background: var(--surface2);
+  border-radius: 6px;
+}
+
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   .hero { padding: 60px 0 50px; }
