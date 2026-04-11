@@ -130,6 +130,7 @@ async function loadData() {
     if (!res.ok) throw new Error("HTTP " + res.status);
     libs = await res.json();
     render(libs);
+    setupExportButtons();
   } catch (err) {
     showError("ডেটা লোড করা যায়নি। (" + err.message + ")");
     console.error("Fetch error:", err);
@@ -221,6 +222,70 @@ document.querySelectorAll('.theme-btn').forEach(btn => {
   });
 });
 
+// ── Export Functions ─────────────────────────────────────────
 
+// Export as JSON
+function exportAsJSON() {
+  const filteredData = getFiltered();
+  
+  const dataStr = JSON.stringify(filteredData, null, 2);
+  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+  
+  const exportFileDefaultName = `tailwind-ui-libraries-${new Date().toISOString().slice(0,10)}.json`;
+  
+  const linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', exportFileDefaultName);
+  linkElement.click();
+}
+
+// Export as CSV (Improved)
+function exportAsCSV() {
+  const filteredData = getFiltered();
+  
+  let csvRows = [];
+  csvRows.push(["Name", "Tier", "Free", "React", "Next.js", "Install", "Link", "Description"]);
+
+  filteredData.forEach(lib => {
+    csvRows.push([
+      lib.name || "",
+      lib.tier || "",
+      lib.free ? "TRUE" : "FALSE",
+      lib.react ? "TRUE" : "FALSE",
+      lib.next ? "TRUE" : "FALSE",
+      lib.install || "Copy-paste",
+      lib.link || "",
+      lib.desc || ""
+    ]);
+  });
+
+  let csvContent = csvRows.map(row => 
+    row.map(field => `"${String(field).replace(/"/g, '""')}"`).join(",")
+  ).join("\n");
+
+  const bom = "\uFEFF";
+  const finalContent = bom + csvContent;
+
+  const encodedUri = "data:text/csv;charset=utf-8," + encodeURIComponent(finalContent);
+  
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", `tailwind-ui-libraries-${new Date().toISOString().slice(0,10)}.csv`);
+  
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+// Attach Event Listeners for Export Buttons
+function setupExportButtons() {
+  const jsonBtn = document.getElementById("exportJSON");
+  const csvBtn = document.getElementById("exportCSV");
+
+  if (jsonBtn) jsonBtn.addEventListener("click", exportAsJSON);
+  if (csvBtn) csvBtn.addEventListener("click", exportAsCSV);
+}
+
+// Call this function after data is loaded
 // ── Start ────────────────────────────────────────────────────
 loadData();
