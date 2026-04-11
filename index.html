@@ -105,6 +105,7 @@
         <input type="text" id="search" placeholder="লাইব্রেরি খুঁজুন..." autocomplete="off" />
         <span class="search-clear" id="clearBtn" onclick="clearSearch()">✕</span>
       </div>
+  
       <div class="filter-wrap">
         <button class="fbtn active" data-filter="all">সব <span class="fbtn-count">43</span></button>
         <button class="fbtn" data-filter="S">🏆 S-Tier</button>
@@ -115,9 +116,21 @@
         <button class="fbtn" data-filter="new">🆕 নতুন</button>
         <button class="fbtn" data-filter="anim">✨ Animation</button>
       </div>
+  
       <div class="result-count" id="resultCount">43টি লাইব্রেরি দেখাচ্ছে</div>
+  
+      <!-- Export Buttons -->
+      <div class="export-wrap">
+        <button id="exportJSON" class="export-btn">
+          📥 Export as JSON
+        </button>
+        <button id="exportCSV" class="export-btn">
+          📥 Export as CSV
+        </button>
+      </div>
+  
     </div>
-  </section>
+  </section>feat(html): add export buttons in controls section
 
   <!-- LIBRARY GRID -->
   <section class="libs-section">
