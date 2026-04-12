@@ -1,11 +1,12 @@
 # 🎨 Tailwind UI Libraries — সম্পূর্ণ গাইড
 
-> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **৪৩টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, কনফ্লিক্ট গাইড এবং আধুনিক থিম সাপোর্ট সহ।
+> React ও Next.js প্রজেক্টে ব্যবহারযোগ্য **৪৩টি** সেরা Tailwind-based UI লাইব্রেরির তালিকা — টায়ার র‍্যাংকিং, কনফ্লিক্ট গাইড, অ্যাডভান্সড ফিল্টার এবং মাল্টিপল থিম সাপোর্ট সহ।
 
 ![Libraries](https://img.shields.io/badge/Libraries-43-6366f1?style=for-the-badge)
 ![Tier](https://img.shields.io/badge/S--Tier-6-a78bfa?style=for-the-badge)
 ![Free](https://img.shields.io/badge/Free-35%2B-34d399?style=for-the-badge)
 ![Themes](https://img.shields.io/badge/Themes-4-ff69b4?style=for-the-badge)
+![Features](https://img.shields.io/badge/Features-Modern-06b6d4?style=for-the-badge)
 
 ---
 
@@ -15,39 +16,39 @@
 
 ---
 
-## ✨ নতুন ফিচারসমূহ (Updated)
+## ✨ নতুন ফিচারসমূহ (Updated April 2026)
 
-- 🔍 **Real-time Search with Debounce** — নাম বা বিবরণ দিয়ে দ্রুত লাইব্রেরি খুঁজে বের করুন।
-- 🎨 **Multiple Themes** — আপনার পছন্দমতো **Dark, Indigo, Purple, বা Teal** থিম বেছে নিন।
-- 📋 **One-click Install** — সরাসরি কমান্ড কপি করার জন্য ইন্টারেক্টিভ কপি বাটন।
-- 🏷️ **Advanced Filtering** — টায়ার (S/A/B/C), New লাইব্রেরি এবং শুধুমাত্র Animation লাইব্রেরি ফিল্টার করার সুবিধা।
-- 🪄 **Glassmorphism UI** — আধুনিক গ্রেডিয়েন্ট এবং গ্লাস ইফেক্ট সহ প্রিমিয়াম লুক।
-- ⚠️ **Conflict Guide** — কোন কোন লাইব্রেরিগুলো একসাথে ব্যবহার করলে কনফ্লিক্ট হতে পারে তার গাইডলাইন।
-- 🏆 **Expert Recommendation** — প্রজেক্টের ধরন অনুযায়ী কোন কম্বিনেশন সেরা তার সাজেশন।
+- 🔍 **Real-time Search with Debounce** — টাইপ করার সময় smooth এবং performant সার্চ
+- 🎨 **Multiple Themes** — **Deep Dark, Indigo, Purple & Teal** থিমে সুইচ করার সুবিধা
+- 📋 **Smart Copy Install Button** — শুধুমাত্র `npm install` কমান্ড কপি করা যায় (Copy-paste disabled)
+- 🪄 **Staggered Card Animation** — কার্ডগুলো একটু একটু করে সুন্দরভাবে আসে
+- 💀 **Skeleton Loading** — ডেটা লোড হওয়ার সময় প্রিমিয়াম skeleton UI
+- 🏷️ **Advanced Filtering** — Tier, Free, New, Animation ফিল্টার
+- ⚠️ **Conflict Guide** — কোন লাইব্রেরি একসাথে ব্যবহার করা যাবে না তার গাইড
+- 🏆 **Expert Recommendations** — প্রজেক্টের জন্য আদর্শ কম্বিনেশন
+- 📤 **Export Feature** — ফিল্টার করা লাইব্রেরি JSON বা CSV ফরম্যাটে এক্সপোর্ট করুন
 
 ---
 
-## 🛠️ টেকনিক্যাল স্ট্যাক (Built With)
+## 🛠️ টেকনিক্যাল স্ট্যাক
 
-- **HTML5 & CSS3** (Custom Properties, Radial Gradients)
-- **Vanilla JavaScript** (ES6+, Filter Logic, LocalStorage)
-- **Google Fonts** (Sora & JetBrains Mono)
-- **JSON Based Data Management**
+- **HTML5 & CSS3** (Custom Properties, Multiple Themes, Glassmorphism)
+- **Vanilla JavaScript** (ES6+, Debounce, LocalStorage, Export Logic)
+- **Google Fonts** — Sora & JetBrains Mono
+- **JSON Based Data** — সহজে নতুন লাইব্রেরি যোগ করা যায়
 
 ---
 
 ## 📁 প্রজেক্ট স্ট্রাকচার
 
 ```plaintext
-tailwind-libs/
-├── index.html      # মূল UI স্ট্রাকচার ও নেভিগেশন
-├── style.css       # কাস্টম থিম সিস্টেম ও এনিমেশন স্টাইল
-├── script.js       # ফিল্টার লজিক, সার্চ এবং থিম সুইচার
-├── data.json       # লাইব্রেরির তালিকা ও বিবরণ (Data Source)
-└── README.md       # প্রজেক্ট ডকুমেন্টেশন
+tailwind-ui-libraries/
+├── index.html          # মূল UI স্ট্রাকচার
+├── style.css           # থিম সিস্টেম, অ্যানিমেশন ও স্কেলিটন স্টাইল
+├── script.js           # সার্চ, ফিল্টার, থিম, এক্সপোর্ট এবং কপি লজিক
+├── data.json           # ৪৩টি লাইব্রেরির ডেটা
+└── README.md
 ```
-
----
 
 ## 🛠️ Local এ চালাতে
 
@@ -80,4 +81,4 @@ open index.html
 
 ## 📝 License
 
-MIT License — যেকোনো কাজে ব্যবহার করুন।
+MIT License —  ফ্রি এবং ওপেন সোর্স। যেকোনো প্রজেক্টে ব্যবহার করতে পারবেন।
