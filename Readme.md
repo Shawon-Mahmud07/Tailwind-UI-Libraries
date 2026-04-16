@@ -7,6 +7,7 @@
 ![Free](https://img.shields.io/badge/Free-35%2B-34d399?style=for-the-badge)
 ![Themes](https://img.shields.io/badge/Themes-4-ff69b4?style=for-the-badge)
 ![Features](https://img.shields.io/badge/Features-Modern-06b6d4?style=for-the-badge)
+![Modal](https://img.shields.io/badge/Modal-Detail-06b6d4?style=for-the-badge)
 
 ---
 
@@ -23,6 +24,7 @@
 - 📋 **Smart Copy Install Button** — শুধুমাত্র `npm install` কমান্ড কপি করা যায় (Copy-paste disabled)
 - 🪄 **Staggered Card Animation** — কার্ডগুলো একটু একটু করে সুন্দরভাবে আসে
 - 💀 **Skeleton Loading** — ডেটা লোড হওয়ার সময় প্রিমিয়াম skeleton UI
+- 📱 **Library Detail Modal** — কার্ডে ক্লিক করলে বিস্তারিত তথ্যসহ সুন্দর মডাল খোলে
 - 🏷️ **Advanced Filtering** — Tier, Free, New, Animation ফিল্টার
 - ⚠️ **Conflict Guide** — কোন লাইব্রেরি একসাথে ব্যবহার করা যাবে না তার গাইড
 - 🏆 **Expert Recommendations** — প্রজেক্টের জন্য আদর্শ কম্বিনেশন
